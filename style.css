@@ -1,0 +1,167 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffeaa7 0%, #ff7675 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 { color: #d63031; margin-top: 0; }
+p { color: #636e72; }
+
+.categories {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cat-btn {
+    padding: 10px 12px;
+    border: none;
+    background-color: #f5f6fa;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cat-btn:hover { background-color: #dfe4ea; }
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 2px solid #fab1a0;
+    border-radius: 12px;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+#shareBtn {
+    background-color: #d63031;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+#shareBtn:hover { background-color: #ff7675; }
+
+.hidden { display: none !important; }
+
+#linkContainer {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 12px;
+}
+
+#generatedLink {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#copyBtn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- HEDİYE KUTUSU TASARIMI --- */
+#giftBox {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+.box-lid {
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    background: #e74c3c;
+    left: -5px;
+    top: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.box-body {
+    position: absolute;
+    width: 150px;
+    height: 110px;
+    background: #c0392b;
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Kurdele Süslemesi */
+.box-body::before, .box-lid::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background: #f1c40f;
+    left: 60px;
+    top: 0;
+}
+
+/* Kutu açılınca kapağın uçma efekti */
+#giftBox.opened .box-lid {
+    transform: translateY(-80px) rotate(-20px);
+    opacity: 0;
+}
+
+/* Sürpriz Not Ekrana Gelme Alanı */
+#secretNoteDisplay {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff9db;
+    border-left: 5px solid #f1c40f;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#theMessage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3436;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

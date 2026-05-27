@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KutudaNeVar 🎉</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="creatorScreen" class="container">
+        <h1>🎉 KutudaNeVar</h1>
+        <p>Sürprizini hazırla, linki arkadaşına gönder!</p>
+        
+        <div class="categories">
+            <button class="cat-btn" onclick="setNote('dogumgunu')">🎂 Doğum Günü</button>
+            <button class="cat-btn" onclick="setNote('sevgililer')">❤️ Sevgililer</button>
+            <button class="cat-btn" onclick="setNote('anneler')">🌸 Anneler Günü</button>
+            <button class="cat-btn" onclick="setNote('bayram')">🌙 Bayram</button>
+            <button class="cat-btn" onclick="setNote('yilbasi')">🎄 Yılbaşı</button>
+            <button class="cat-btn" onclick="setNote('tebrik')">🎓 Tebrikler</button>
+        </div>
+
+        <textarea id="noteInput" placeholder="Notunu buraya yaz veya yukarıdan bir kategori seç..."></textarea>
+
+        <button id="shareBtn" onclick="generateLink()">Sürpriz Linki Oluştur</button>
+        
+        <div id="linkContainer" class="hidden">
+            <p>Mavi ve tıklanabilir sürpriz linkin hazır! Kopyala:</p>
+            <input type="text" id="generatedLink" readonly>
+            <button id="copyBtn" onclick="copyLink()">Linki Kopyala</button>
+        </div>
+    </div>
+
+    <div id="receiverScreen" class="container hidden">
+        <h1 id="surpriseTitle">Sana Bir Mesaj Var! 🎁</h1>
+        
+        <div id="giftBox" onclick="openBox()">
+            <div class="box-lid"></div>
+            <div class="box-body"></div>
+        </div>
+
+        <div id="secretNoteDisplay" class="hidden">
+            <p id="theMessage"></p>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
